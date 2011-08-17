@@ -15,7 +15,6 @@ if( isset($_GET['s']) && !empty($_GET['s']) ) {
 	$smarty->assign("Wyniki", $wyniki_zapytania);
 	
 }
-
-wyswietl_strone($smarty, $strona, $strona['zawartosc']);
+wyswietl_strone($strona);
 
 ?>

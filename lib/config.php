@@ -10,9 +10,7 @@ $baza['db'] = 'epi';
 $baza['host'] = 'localhost';
 
 // konfiguracja ścieżek
-$sciezki['szablony'] = dirname(dirname(__FILE__)) . '/templates/';
-
-// konfiguracja szablonów
-$szablony['rozszerzenie'] = '.tpl';
+$sciezki['szablony_katalog'] = dirname(dirname(__FILE__)) . '/templates/';
+$sciezki['szablony_rozszerzenie'] = '.tpl';
 
 ?>

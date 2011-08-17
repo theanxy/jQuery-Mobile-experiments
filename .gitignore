@@ -1,0 +1,5 @@
+templates_c
+lib/Smarty/
+.buildpath
+.project
+.settings/

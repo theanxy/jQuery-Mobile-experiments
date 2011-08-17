@@ -4,27 +4,36 @@
 */
 
 
-/*
-  Wyświetla podaną stronę
-*/
-function wyswietl_strone($smarty, $szablony, $szablon = '404') {
-
-	if (empty($szablon)) $szablon = '404';
-
+/**
+ * Wyświetlenie szablonu.
+ *
+ * @param array $strona Dane do wyświetlenia w szablonie
+ * @param string $layout "Layout" strony
+ * @global object $smarty Obiekt klasy Smarty
+ * @global object $sciezki Scieżki wykorzystywane w aplikacji
+ */
+function wyswietl_strone($strona, $layout = 'index') {
+	global $smarty;
+	global $sciezki;
+	
+	$smarty->assign($strona);
 	$smarty->display(
-		$szablony['tpl_start'].
-		$szablon.
-		$szablony['tpl_end']
+		$sciezki['szablony_katalog'].
+		$layout.
+		$sciezki['szablony_rozszerzenie']
 	);
-
 };
 
 
-/*
- Sprawdza wynik w bazie danych.
- @return array Content.
-*/
-function sprawdz_wyniki($baza, $zapytanie) {
+/**
+ * Sprawdza wynik w bazie danych.
+ *
+ * @param string $zapytanie
+ * @return array Content.
+ */
+function sprawdz_wyniki($zapytanie) {
+	global $baza;
+	
 	$result_txt = '';
 	//$zapytanie = mysql_real_escape_string($zapytanie);
 

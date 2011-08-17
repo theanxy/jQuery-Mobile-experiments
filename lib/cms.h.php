@@ -6,8 +6,8 @@
 // zawieranie Smarty
 include 'Smarty/Smarty.class.php';
 $smarty = new Smarty;
-$smarty->template_dir = '../templates';
-$smarty->compile_dir = '../templates_c';
+$smarty->template_dir = dirname(dirname(__FILE__)) . '/templates';
+$smarty->compile_dir = dirname(dirname(__FILE__)) . '/templates_c';
 $smarty->debugging = true;
 
 // konfiguracja developerska
