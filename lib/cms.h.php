@@ -17,6 +17,7 @@ ini_set('display_errors','on');
 // załączenie bibliotek
 include 'config.php';
 include 'funkcje.php';
+include 'baza_danych.php';
 include 'sprawdzenie_danych.php';
 
 ?>

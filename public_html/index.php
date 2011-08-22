@@ -10,7 +10,7 @@ $strona['zawartosc'] = 'index';
 if( isset($_GET['s']) && !empty($_GET['s']) ) {
 
 	$zapytanie = addslashes($_GET['s']);
-	$wyniki_zapytania = sprawdz_wyniki($baza, $zapytanie);
+	$wyniki_zapytania = sprawdz_wyniki($sql, $zapytanie);
 
 	$smarty->assign("Wyniki", $wyniki_zapytania);
 	
