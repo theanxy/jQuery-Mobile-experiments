@@ -1,11 +1,5 @@
-{include file="header.tpl" title="Wyszukiwarka wpisów w książce adresowej"}
+{include file="layout/header.tpl" title="Wyszukiwarka wpisów w książce adresowej"}
 
-{include file="content/search.tpl"}
+{include file="content/landing.tpl"}
 
-{if $Wyniki != '' }	
-
-Wyszukałeś: {$smarty.get.s}
-<h2>Wyniki:</h2>
-{$Wyniki}
-
-{/if}
+{include file="layout/footer.tpl"}
