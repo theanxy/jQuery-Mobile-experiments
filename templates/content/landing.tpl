@@ -1,3 +1,0 @@
-Witaj!
-
-Strona główna.

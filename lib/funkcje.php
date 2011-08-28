@@ -12,14 +12,15 @@
  * @global object $smarty Obiekt klasy Smarty
  * @global object $sciezki Scieżki wykorzystywane w aplikacji
  */
-function wyswietl_strone($strona, $layout = 'index') {
+function wyswietl_strone($strona, $layout = 'landing') {
 	global $smarty;
 	global $sciezki;
 	
+	$smarty->assign('layout', $layout);
 	$smarty->assign($strona);
 	$smarty->display(
 		$sciezki['szablony_katalog'].
-		$layout.
+		'default'.
 		$sciezki['szablony_rozszerzenie']
 	);
 };

@@ -14,7 +14,8 @@
 
     include '../lib/cms.h.php';
 
-    $strona['zawartosc'] = 'logowanie';
+    $layout = 'logowanie';
+	$strona = array();
 
     if ( isset($_POST) && count($_POST)  ) {
         
@@ -50,5 +51,5 @@
 
     }
 
-    wyswietl_strone($sciezki, $szablony, $strona);
+    wyswietl_strone($strona, $layout);
 ?>

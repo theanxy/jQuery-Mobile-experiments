@@ -5,13 +5,10 @@
 
 include '../lib/cms.h.php';
 
-
 $wyniki = pobierz_elementy($sql, 'SELECT * FROM ksiazka_telefoniczna');
-
 $smarty->assign("Wyniki", $wyniki);
 
-$strona['zawartosc'] = 'index';
-
+$strona = array();
 
 //$smarty->assign("Wyniki", $wyniki_zapytania);
 	

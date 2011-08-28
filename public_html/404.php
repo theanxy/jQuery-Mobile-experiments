@@ -5,6 +5,8 @@
 
 include '../lib/cms.h.php';
 
+$strona = array();
+
 wyswietl_strone($strona, '404');
 
 ?>
