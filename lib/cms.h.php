@@ -18,6 +18,7 @@ ini_set('display_errors','on');
 include 'config.php';
 include 'funkcje.php';
 include 'baza_danych.php';
+include 'autoryzacja.php';
 include 'sprawdzenie_danych.php';
 
 ?>

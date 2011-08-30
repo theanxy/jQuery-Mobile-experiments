@@ -18,13 +18,7 @@
      */
     function zaloguj_uzytkownika(&$sql, $dane) {
 
-        $wynik
-            = sql_pobierz(
-                $sql, 
-                array('*'), 
-                'uzytkownicy', 
-                array('login' => $dane['login'], '(haslo=md5(\''.$dane['haslo'].'\'))' => 1)
-            );      
+        $wynik = pobierz_elementy($sql, 'SELECT * FROM uzytkownicy WHERE login = \''.$dane['login'].'\' AND haslo = md5(\''.$dane['haslo'].'\')');
         
         if(count($wynik)!=1) {
             return array();

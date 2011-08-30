@@ -38,7 +38,7 @@
                 $_SESSION['uzytkownik'] = $dane_uzytkownika;
                 
                 // i przekierowujemy użytkownika na przykładową treść dostępną wyłącznie dla zalogowanych użytkowników:
-                header('Location:lista_stron.php');
+                header('Location:index.php');
                 exit;
                 
             }
