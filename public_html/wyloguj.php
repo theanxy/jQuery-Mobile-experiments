@@ -14,8 +14,8 @@
 	
 	if ( autoryzacja() ) { 
 
-        $layout = 'komunikat';
-        $strona['status']['komunikaty']['operacje'][] 
+        $layout = 'empty';
+        $strona['komunikat'] 
                     = 'Wylogowanie zakończone powodzeniem.';
 
         if ( isset($_SESSION['uzytkownik']) ) {

@@ -16,11 +16,17 @@ function wyswietl_strone($strona, $layout = 'landing') {
 	global $smarty;
 	global $sciezki;
 
+	if (!isset($strona['title'])) {
+	 	$strona['title'] = '';
+	} else {
+		$strona['title'] = ' - '.$strona['title'];
+	}
+	$smarty->assign($strona);
+	
 	$smarty->assign('layout', $layout);
-	$smarty->assign('strona', $strona);
 	$smarty->display(
 		$sciezki['szablony_katalog'].
-		'default'.
+		'index'.
 		$sciezki['szablony_rozszerzenie']
 		);
 };

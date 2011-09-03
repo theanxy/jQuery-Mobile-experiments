@@ -14,42 +14,49 @@
 
     include '../lib/cms.h.php';
 
-    $layout = 'logowanie';
 	$strona = array();
 
-    if ( isset($_POST) && count($_POST)  ) {
+	if ( isset($_SESSION['uzytkownik']) ) {
+		$strona['komunikat'] = "Użytkownik już zalogowany. Najpierw się wyloguj.";
+		
+		$layout = "empty";
+		
+	    wyswietl_strone($strona, $layout);
+	} else {
+	    $layout = 'logowanie';
+	    if ( isset($_POST) && count($_POST)  ) {
         
-        $wzorzec = array('login', 'haslo');
-        $strona['dane'] = pobierz_dane_z_formularza($_POST, $wzorzec);
+	        $wzorzec = array('login', 'haslo');
+	        $strona['dane'] = pobierz_dane_z_formularza($_POST, $wzorzec);
         
-        $strona['status']['komunikaty']['bledy_formularza'] = array();
+	        $strona['komunikat'] = array();
 
-        sprawdz_formularz_logowania($strona['status']['komunikaty']['bledy_formularza'], $strona['dane'], $wzorzec);
+	        sprawdz_formularz_logowania($strona['status']['komunikaty']['bledy_formularza'], $strona['dane'], $wzorzec);
 
-        if (!count($strona['status']['komunikaty']['bledy_formularza'])) {
+	        if (!count($strona['status']['komunikaty']['bledy_formularza'])) {
             
-            unset($strona['status']['komunikaty']['bledy_formularza']);
+	            unset($strona['status']['komunikaty']['bledy_formularza']);
 
-            $dane_uzytkownika = zaloguj_uzytkownika($sql, $strona['dane']);
+	            $dane_uzytkownika = zaloguj_uzytkownika($sql, $strona['dane']);
             
-            if(count($dane_uzytkownika)) {
+	            if(count($dane_uzytkownika)) {
 
-                // autoryzacja powiodła się, a zatem rejestrujemy dane w sesji:
-                $_SESSION['uzytkownik'] = $dane_uzytkownika;
+	                // autoryzacja powiodła się, a zatem rejestrujemy dane w sesji:
+	                $_SESSION['uzytkownik'] = $dane_uzytkownika;
                 
-                // i przekierowujemy użytkownika na przykładową treść dostępną wyłącznie dla zalogowanych użytkowników:
-                header('Location:index.php');
-                exit;
+	                // i przekierowujemy użytkownika na przykładową treść dostępną wyłącznie dla zalogowanych użytkowników:
+	                header('Location: /');
+	                exit;
                 
-            }
-            else {
-                $strona['status']['komunikaty']['bledy'][] = 'Nieprawidłowe dane autoryzacyjne.';
-                $strona['zawartosc'] = 'blad';              
-            }
+	            }
+	            else {
+	                $strona['status']['komunikaty']['bledy'][] = 'Nieprawidłowe dane autoryzacyjne.';
+	                $strona['zawartosc'] = 'blad';              
+	            }
             
-        }
+	        }
 
-    }
-
-    wyswietl_strone($strona, $layout);
+	    }
+	    wyswietl_strone($strona, $layout);
+	}
 ?>

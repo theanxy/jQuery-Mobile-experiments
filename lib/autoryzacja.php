@@ -34,16 +34,22 @@
      * 
      * @return mixed Wynik operacji
      */
-     function autoryzacja() {
+     function autoryzacja($noredirect = false) {
         
         if ( isset($_SESSION['uzytkownik'])  && count($_SESSION['uzytkownik']) ) {
             return true;    
         }
         else {
             // przekierowujemy użytkownika na stronę logowania:
-            header('Location:logowanie.php');
-            exit;
+            if (!isset($noredirect) || $noredirect != true) {
+				header('Location: logowanie.php');
+	            exit;
+			};
         }
         
      }
+
+	function sprawdz_autoryzacje($strona, $tytul) {
+		
+	}
 ?>
