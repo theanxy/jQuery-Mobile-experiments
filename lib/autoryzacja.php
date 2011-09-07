@@ -18,13 +18,13 @@
      */
     function zaloguj_uzytkownika(&$sql, $dane) {
 
-        $wynik = pobierz_elementy($sql, 'SELECT * FROM uzytkownicy WHERE login = \''.$dane['login'].'\' AND haslo = md5(\''.$dane['haslo'].'\')');
+        $wynik = pobierz_elementy($sql, 'SELECT * FROM uzytkownicy WHERE login = \''.$dane['login'].'\' AND haslo = md5(\''.$dane['haslo'].'\') AND typ = \''.$dane['typ'].'\'');
         
         if(count($wynik)!=1) {
             return array();
         }
         else {
-            return current($wynik);
+            return $wynik[0];
         }
 
     }
@@ -36,8 +36,8 @@
      */
      function autoryzacja($noredirect = false) {
         
-        if ( isset($_SESSION['uzytkownik'])  && count($_SESSION['uzytkownik']) ) {
-            return true;    
+        if ( isset($_SESSION['uzytkownik'])  && count($_SESSION['uzytkownik']) ) {	
+            return true; 
         }
         else {
             // przekierowujemy użytkownika na stronę logowania:

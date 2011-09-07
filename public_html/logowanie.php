@@ -26,16 +26,16 @@
 	    $layout = 'logowanie';
 	    if ( isset($_POST) && count($_POST)  ) {
         
-	        $wzorzec = array('login', 'haslo');
+	        $wzorzec = array('login', 'haslo', 'typ');
 	        $strona['dane'] = pobierz_dane_z_formularza($_POST, $wzorzec);
         
 	        $strona['komunikat'] = array();
 
-	        sprawdz_formularz_logowania($strona['status']['komunikaty']['bledy_formularza'], $strona['dane'], $wzorzec);
+	        sprawdz_formularz_logowania($strona['komunikat'], $strona['dane'], $wzorzec);
 
-	        if (!count($strona['status']['komunikaty']['bledy_formularza'])) {
+	        if (!count($strona['komunikat'])) {
             
-	            unset($strona['status']['komunikaty']['bledy_formularza']);
+	            unset($strona['komunikat']);
 
 	            $dane_uzytkownika = zaloguj_uzytkownika($sql, $strona['dane']);
             
@@ -50,8 +50,8 @@
                 
 	            }
 	            else {
-	                $strona['status']['komunikaty']['bledy'][] = 'Nieprawidłowe dane autoryzacyjne.';
-	                $strona['zawartosc'] = 'blad';              
+	                $strona['komunikat'] = 'Nieprawidłowe dane autoryzacyjne.';
+	                $layout = 'empty';
 	            }
             
 	        }

@@ -1,4 +1,4 @@
-{if isset($strona.status.komunikaty.bledy_formularza)}
+{if isset($komunikat)}
 <div>
 Formularz został wypełniony nieprawidłowo. Proszę poprawić wskazane pola.
 </div>
@@ -7,22 +7,26 @@ Formularz został wypełniony nieprawidłowo. Proszę poprawić wskazane pola.
 <form method="post" action="{$smarty.server.PHP_SELF}">
     <fieldset>
         <legend>Logowanie</legend>
+		<div>
+			<input type="radio" name="typ" value="student" id="student" checked="checked"> <label for="student">Student</label>
+			<input type="radio" name="typ" value="nauczyciel" id="nauczyciel"> <label for="nauczyciel">Nauczyciel</label>
+		</div>
         <div>
             <label for="login">Identyfikator użytkownika:</label>
-            <input type="text" id="login" name="login" size="16" maxlength="16" value="{if isset($strona.dane.login)}{$strona.dane.login}{/if}" />
+            <input type="text" id="login" name="login" size="16" maxlength="16" value="{if isset($dane.login)}{$dane.login}{/if}Jan0Kowalski" />
         </div>
-		{if isset($strona.status.komunikaty.bledy_formularza.login)}
+		{if isset($komunikat.login)}
             <div>
-                {$strona.status.komunikaty.bledy_formularza.login}
+                {$komunikat.login}
             </div>      
 		{/if}
         <div>
             <label for="haslo">Hasło:</label>
-            <input type="password" id="haslo" name="haslo" size="16" maxlength="16"  />
+            <input type="password" id="haslo" name="haslo" size="16" maxlength="16" value="Jan0Kowalski1" />
         </div>
-		{if isset($strona.status.komunikaty.bledy_formularza.haslo)}
+		{if isset($komunikat.haslo)}
             <div>
-                {$strona.status.komunikaty.bledy_formularza.haslo}
+                {$komunikat.haslo}
             </div>      
 		{/if}
         <div>
