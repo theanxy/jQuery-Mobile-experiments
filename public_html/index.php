@@ -34,8 +34,6 @@ switch ($_GET['wyswietl']) {
 			}
 
 			$strona['menu'] = pobierz_elementy($sql, 'SELECT nazwa, adres FROM menu_'.$_SESSION['uzytkownik']['typ']);
-		} else {
-			$strona['komunikat'] = 'Niestety musisz się zalogować.';
 		}
 		break;
 	default:

@@ -3,7 +3,15 @@
 Formularz został wypełniony nieprawidłowo. Proszę poprawić wskazane pola.
 </div>
 {/if}
-
+{if isset($smarty.get.debug)}
+<aside>
+	<h2>Przykładowi użytkownicy:</h2>
+	<ul>
+		<li>Student: Jan0Kowalski / Jan0Kowalski1</li>
+		<li>Nauczyciel: Artur0Nowak / Artur0Nowak1</li>
+	</ul>
+</aside>
+{/if}
 <form method="post" action="{$smarty.server.PHP_SELF}">
     <fieldset>
         <legend>Logowanie</legend>

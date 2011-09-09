@@ -13,3 +13,9 @@
 {/foreach}
 </ul>
 {/if}
+
+{if !isset($smarty.session.uzytkownik)}
+<h2>Witaj w systemie zarządzania studentów!</h2>
+
+<p>Ten system jest w fazie beta testów, wróć za jakiś czas.</p>
+{/if}
