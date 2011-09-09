@@ -1,4 +1,3 @@
-<h1>USOS</h1>
 {if isset($komunikat)}
 <h2>{$komunikat}</h2>
 {/if}
@@ -17,5 +16,7 @@
 {if !isset($smarty.session.uzytkownik)}
 <h2>Witaj w systemie zarządzania studentów!</h2>
 
-<p>Ten system jest w fazie beta testów, wróć za jakiś czas.</p>
+<p>To jest prototyp Systemu Obsługi Studenta dostosowanego pod urządzenia mobilne.</p>
+
+<a href="logowanie.php" data-rel="dialog" data-ajax="true" data-role="button">Zaloguj</a>
 {/if}

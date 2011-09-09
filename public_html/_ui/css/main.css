@@ -1,0 +1,27 @@
+@media (min-width:800px) {
+	body.ui-body-c {
+		background: #424242;
+	}
+	
+	.container {
+		width: 320px;
+		min-height: 460px;
+		padding: 153px 40px 246px;
+		margin: 0 auto;
+		background: url(../images/iphone.jpg) no-repeat 0 0;
+		position: relative;
+	}
+	.container:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 400px;
+		height: 246px;
+		background: url(../images/iphone.jpg) no-repeat 0 100%;
+	}
+	
+	[data-role="content"] {
+		min-height: 350px;
+	}
+}
