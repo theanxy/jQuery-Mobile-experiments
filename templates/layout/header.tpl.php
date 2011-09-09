@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
 	<head> 
-	<title>USOS{$title}</title> 
+	<title>USOS — {$title}</title> 
 	<meta charset=utf-8>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -18,19 +18,10 @@
 	<div class="container">
 
 		<div data-role="header">
-			<h1>USOS{$title}</h1>
+			{if $smarty.get.wyswietl != ''}
+				<a href="/" data-icon="home">Powrót</a>
+			{/if}
+			<h1>{$title}</h1>
 		</div><!-- /header -->
 
 		<div data-role="content">
-
-		<a href="/">Główna</a>
-
-		{*
-		{if isset($komunikat)}
-		{foreach $komunikat as $wiadomosc}
-		{strip}
-		<div class="komunikat">{$wiadomosc}</div>
-		{/strip}
-		{/foreach}
-		{/if}
-		*}

@@ -1,5 +1,5 @@
 {if !empty($smarty.session.uzytkownik)}
-	<a href="wyloguj.php" data-role="button">Wyloguj</a>
+	<a href="?wyswietl=wyloguj" data-role="button">Wyloguj</a>
 {/if}
 </div><!-- /content -->
 

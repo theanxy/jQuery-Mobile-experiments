@@ -12,7 +12,7 @@ Formularz został wypełniony nieprawidłowo. Proszę poprawić wskazane pola.
 	</ul>
 </aside>
 {/if}
-<form method="post" action="{$smarty.server.PHP_SELF}">
+<form method="post" action="{$smarty.server.REQUEST_URI}">
 	<div data-role="fieldcontain">
 	    <fieldset data-role="controlgroup" data-type="horizontal">
 			<input type="radio" name="typ" value="student" id="student" checked="checked">

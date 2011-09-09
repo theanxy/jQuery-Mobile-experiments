@@ -18,12 +18,6 @@ switch ($_GET['wyswietl']) {
     case 'plan':
 		include('content/plan.inc.php');
         break;
-    case 1:
-        echo "i equals 1";
-        break;
-    case 2:
-        echo "i equals 2";
-        break;
 	case '':
 		$strona['title'] = "Strona główna";
 		$layout = 'landing';
@@ -36,6 +30,13 @@ switch ($_GET['wyswietl']) {
 			$strona['menu'] = pobierz_elementy($sql, 'SELECT nazwa, adres FROM menu_'.$_SESSION['uzytkownik']['typ']);
 		}
 		break;
+    case 'logowanie':
+		include('content/logowanie.inc.php');
+        break;
+    case 'wyloguj':
+		include('content/wyloguj.inc.php');
+        break;
+
 	default:
 		$layout = 'empty';
 		$strona['title'] = 'Błąd 404';

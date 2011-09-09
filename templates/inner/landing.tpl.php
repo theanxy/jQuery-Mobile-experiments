@@ -18,5 +18,5 @@
 
 <p>To jest prototyp Systemu Obsługi Studenta dostosowanego pod urządzenia mobilne.</p>
 
-<a href="logowanie.php" data-rel="dialog" data-ajax="true" data-role="button">Zaloguj</a>
+<a href="?wyswietl=logowanie" data-rel="dialog" data-ajax="true" data-role="button">Zaloguj</a>
 {/if}

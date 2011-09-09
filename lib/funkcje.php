@@ -17,9 +17,7 @@ function wyswietl_strone($strona, $layout = 'landing') {
 	global $sciezki;
 
 	if (!isset($strona['title'])) {
-	 	$strona['title'] = '';
-	} else {
-		$strona['title'] = ' - '.$strona['title'];
+	 	$strona['title'] = 'Strona główna';
 	}
 	$smarty->assign($strona);
 	
