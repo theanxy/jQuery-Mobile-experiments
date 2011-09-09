@@ -1,6 +1,6 @@
 <h1>USOS</h1>
-{if isset($test)}
-Test: {$test}
+{if isset($komunikat)}
+<h2>{$komunikat}</h2>
 {/if}
 
 
@@ -13,9 +13,3 @@ Test: {$test}
 {/foreach}
 </ul>
 {/if}
-
-{*
-<ul>
-	<li><a href="/?wyswietl=plan">Plan zajęć</a></li>
-</ul>
-*}

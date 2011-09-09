@@ -4,7 +4,7 @@
 <title>USOS{$title}</title>
 
 <body>
-{if isset($smarty.session.uzytkownik)}
+{if !empty($smarty.session.uzytkownik)}
 Zalogowano: {$smarty.session.uzytkownik.imie} {$smarty.session.uzytkownik.nazwisko} ({$smarty.session.uzytkownik.typ})
 (<a href="wyloguj.php">Wyloguj</a>)<br>
 {else}

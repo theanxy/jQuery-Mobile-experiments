@@ -25,10 +25,23 @@ switch ($_GET['wyswietl']) {
         echo "i equals 2";
         break;
 	case '':
-	default:
 		$strona['title'] = "Strona główna";
 		$layout = 'landing';
-		$strona['menu'] = pobierz_elementy($sql, 'SELECT nazwa, adres FROM menu_student');
+		
+		if( isset($_SESSION['uzytkownik'])  && count($_SESSION['uzytkownik']) ) {
+			if($_SESSION['uzytkownik']['typ'] != "student" && $_SESSION['uzytkownik']['typ'] != "nauczyciel"){
+				$_SESSION['uzytkownik']['typ'] = "student";
+			}
+
+			$strona['menu'] = pobierz_elementy($sql, 'SELECT nazwa, adres FROM menu_'.$_SESSION['uzytkownik']['typ']);
+		} else {
+			$strona['komunikat'] = 'Niestety musisz się zalogować.';
+		}
+		break;
+	default:
+		$layout = 'empty';
+		$strona['title'] = 'Błąd 404';
+		$strona['komunikat'] = "Nie ma takiej strony!";
 }
 
 wyswietl_strone($strona, $layout);
