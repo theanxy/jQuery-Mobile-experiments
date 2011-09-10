@@ -18,6 +18,9 @@ switch ($_GET['wyswietl']) {
     case 'plan':
 		include('content/plan.inc.php');
         break;
+	case 'aktualizuj':
+		include('content/plan_aktualizuj.inc.php');
+		break;
     case 'mapa':
 		$strona['title'] = 'Mapa';
 		$layout = 'mapa';
