@@ -11,6 +11,6 @@ $sql['host'] = 'localhost';
 
 // konfiguracja ścieżek
 $sciezki['szablony_katalog'] = dirname(dirname(__FILE__)) . '/templates/';
-$sciezki['szablony_rozszerzenie'] = '.tpl.php';
+$sciezki['szablony_rozszerzenie'] = '.tpl';
 
 ?>

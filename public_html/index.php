@@ -18,17 +18,29 @@ switch ($_GET['wyswietl']) {
     case 'plan':
 		include('content/plan.inc.php');
         break;
+    case 'mapa':
+		$strona['title'] = 'Mapa';
+		$layout = 'mapa';
+        break;
+    case 'komunikaty':
+		include('content/komunikaty.inc.php');
+        break;
 	case '':
 		$strona['title'] = "Strona główna";
 		$layout = 'landing';
 		
 		if( isset($_SESSION['uzytkownik'])  && count($_SESSION['uzytkownik']) ) {
-			if($_SESSION['uzytkownik']['typ'] != "student" && $_SESSION['uzytkownik']['typ'] != "nauczyciel"){
-				$_SESSION['uzytkownik']['typ'] = "student";
+			if($_SESSION['uzytkownik']['typ'] == "student") {
+				$menu_visibility = 'student';
+			} else {
+				$menu_visibility = 'teacher';
 			}
-
-			$strona['menu'] = pobierz_elementy($sql, 'SELECT nazwa, adres FROM menu_'.$_SESSION['uzytkownik']['typ']);
+		} else {
+			$menu_visibility = 'public';			
 		}
+		
+		$strona['menu'] = pobierz_elementy($sql, 'SELECT * FROM menu WHERE visibility_'.$menu_visibility.' = 1 ORDER BY id ASC');
+		
 		break;
     case 'logowanie':
 		include('content/logowanie.inc.php');

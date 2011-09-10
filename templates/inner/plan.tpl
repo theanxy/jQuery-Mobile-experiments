@@ -1,5 +1,3 @@
-<h1>Plan zajęć</h1>
-
 {if isset($plan)}
 <table style="border: 1px solid #000;">
 	<thead>

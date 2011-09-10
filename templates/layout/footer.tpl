@@ -1,11 +1,11 @@
-{if !empty($smarty.session.uzytkownik)}
+{if !empty($smarty.session.uzytkownik) && $title != 'Mapa'}
 	<a href="?wyswietl=wyloguj" data-role="button">Wyloguj</a>
 {/if}
 </div><!-- /content -->
 
 <div data-role="footer">
 	{if !empty($smarty.session.uzytkownik)}
-		<h4>{$smarty.session.uzytkownik.imie} {$smarty.session.uzytkownik.nazwisko} ({$smarty.session.uzytkownik.typ}) </h4>
+		<h4>{$smarty.session.uzytkownik.typ|capitalize}</h4>
 	{else}
 		<h4>Niezalogowany!</h4>
 	{/if}
