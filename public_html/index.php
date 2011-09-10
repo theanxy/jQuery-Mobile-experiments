@@ -35,8 +35,8 @@ switch ($_GET['wyswietl']) {
 		if( isset($_SESSION['uzytkownik'])  && count($_SESSION['uzytkownik']) ) {
 			if($_SESSION['uzytkownik']['typ'] == "student") {
 				$menu_visibility = 'student';
-			} else {
-				$menu_visibility = 'teacher';
+			} elseif($_SESSION['uzytkownik']['typ'] == "admin") {
+				$menu_visibility = 'admin';
 			}
 		} else {
 			$menu_visibility = 'public';			
@@ -45,6 +45,9 @@ switch ($_GET['wyswietl']) {
 		$strona['menu'] = pobierz_elementy($sql, 'SELECT * FROM menu WHERE visibility_'.$menu_visibility.' = 1 ORDER BY id ASC');
 		
 		break;
+    case 'edit_users':
+		include('content/admin/edit_users.inc.php');
+        break;
     case 'logowanie':
 		include('content/logowanie.inc.php');
         break;

@@ -3,3 +3,5 @@ lib/Smarty/
 .buildpath
 .project
 .settings/
+*.sql*
+Feedback*

@@ -1,6 +1,9 @@
 [data-role="content"] .ui-listview {
 	margin: 15px -15px;
 }
+.user-type {
+	text-align: center;
+}
 .users {
 	font-size: 85%;
 	list-style: none;
