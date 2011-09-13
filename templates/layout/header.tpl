@@ -18,10 +18,13 @@
 	<div class="container">
 
 		<div data-role="header">
-			{if $smarty.get.wyswietl != ''}
-				<a href="/" data-icon="home">Powrót</a>
-			{/if}
+{if $smarty.get.wyswietl != ''}
+			<a href="/" data-icon="home">Powrót</a>
+{/if}
 			<h1>{$title}</h1>
+{if !empty($smarty.session.uzytkownik)}
+			<a href="?wyswietl=wyloguj" class="wyloguj">Wyloguj</a>
+{/if}
 		</div><!-- /header -->
 
 		<div data-role="content">

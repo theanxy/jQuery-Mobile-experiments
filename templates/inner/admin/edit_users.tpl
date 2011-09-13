@@ -1,25 +1,63 @@
-{if isset($uzytkownicy)}
-<form action="{$smarty.get.REQUEST_URI}" method="post">
-	<fieldset>
-		<ol>
-		{foreach from=$uzytkownicy item=uzytkownik}
-			<li>{$uzytkownik.login} <input type="checkbox" value="{$uzytkownik.id}"></li>
-		{/foreach}
-		</ol>
+<div data-role="collapsible-set">
+	<div data-role="collapsible">
+		<h3>Obecni użytkownicy</h3>
 		
-		Zaznaczone: <input type="submit" value="usuń">
-	</fieldset>
-</form>
-{else}
-Wystąpił błąd
-{/if}
+		
+	</div>
+	<div data-role="collapsible">
+		<h3>Usuń użytkownika</h3>
 
-<h3>Dodaj użytkownika</h3>
-<form action="{$smarty.get.REQUEST_URI}" method="post">
-	<fieldset>
-		<input type="text" name="imie" id="imie" placeholder="Imię">
-		<input type="text" placeholder="Nazwisko">
-		<input type="text" placeholder="Hasło">
-		<input type="submit" value="Dodaj">
-	</fieldset>
-</form>
+		{if isset($uzytkownicy)}
+		<form action="{$smarty.get.REQUEST_URI}" method="post">
+			<fieldset>
+				<ol>
+				{foreach from=$uzytkownicy item=uzytkownik}
+					<li><label for="uzytkownik_{$uzytkownik.id}">{$uzytkownik.login}</label> <input type="radio" name="uzytkownik" id="uzytkownik_{$uzytkownik.id}" value="{$uzytkownik.id}"></li>
+				{/foreach}
+				</ol>
+		
+				<input type="submit" value="Usuń zaznaczonych" data-theme="b">
+			</fieldset>
+		</form>
+		{else}
+		<p>Wystąpił błąd.</p>
+		{/if}
+	</div>
+
+	<div data-role="collapsible"{if $smarty.post.login} data-collapsed="false"{/if}>
+		<h3>Dodaj użytkownika</h3>
+		<form action="{$smarty.get.REQUEST_URI}" method="post">
+			<fieldset>
+				<input type="text" name="imie" id="imie"{if isset($dane.imie)} value="{$dane.imie}"{/if} placeholder="Imię">
+				{if isset($komunikat.imie)}
+		            <div>
+		                {$komunikat.imie}
+		            </div>      
+				{/if}
+				<input type="text" name="nazwisko" id="nazwisko"{if isset($dane.nazwisko)} value="{$dane.nazwisko}"{/if} placeholder="Nazwisko">
+				{if isset($komunikat.nazwisko)}
+		            <div>
+		                {$komunikat.nazwisko}
+		            </div>      
+				{/if}
+				<select name="typ" id="typ">
+					<option value="student">Student</option>
+					<option value="nauczyciel"{if $dane.typ == 'nauczyciel'}selected{/if}>Nauczyciel</option>
+				</select>
+				<input type="text" name="login" id="login"{if isset($dane.login)} value="{$dane.login}"{/if} placeholder="Login">
+				{if isset($komunikat.login)}
+		            <div>
+		                {$komunikat.login}
+		            </div>      
+				{/if}
+				<input type="password" name="haslo" id="haslo" placeholder="Hasło">
+				{if isset($komunikat.haslo)}
+		            <div>
+		                {$komunikat.haslo}
+		            </div>      
+				{/if}
+				<input type="submit" value="Dodaj">
+			</fieldset>
+		</form>
+	</div>
+</div>

@@ -65,6 +65,34 @@ function sprawdz_pole_haslo(&$bledy_formularza, $formularz, $pole) {
 }
 
 /**
+ * Sprawdzenie poprawności identyfikatora użytkownika.
+ * 
+ * @param array $bledy_formularza Tablica przechowująca błędy danych dla formularza   
+ * @param array $formularz Tablica pól pochodzących z formularza
+ * @param string $pole Nazwa pola do sprawdzenia
+ * @return boolean Wynik sprawdzania pola
+ */
+function sprawdz_pole_imienazwisko(&$bledy_formularza, $formularz, $pole) {
+    
+    if ( strlen($formularz[$pole]) < 2 ) {
+        blad_formularza($bledy_formularza, $pole, 'Wprowadzona wartość w tym polu jest za krótka.');
+        return false;
+    }
+    elseif ( strlen($formularz[$pole]) > 16 ) {
+        blad_formularza($bledy_formularza, $pole, 'Wprowadzona wartość w tym polu jest za długa.');
+        return false;
+    }       
+    elseif ( !preg_match('/^[A-Za-z0-9]+$/', $formularz[$pole]) ) {
+        blad_formularza($bledy_formularza, $pole, 'To pole zawiera nieprawidłowe znaki.');
+        return false;
+    }
+    else {
+        return true;
+    }
+    
+}
+
+/**
  * Sprawdzenie poprawności formularza logowania.
  * 
  * @param array $bledy_formularza Tablica przechowująca błędy danych dla formularza   
@@ -73,6 +101,21 @@ function sprawdz_pole_haslo(&$bledy_formularza, $formularz, $pole) {
  */
 function sprawdz_formularz_logowania(&$bledy_formularza, $formularz, $wzorzec) {
     wymagaj_danych($formularz, $wzorzec, $bledy_formularza);
+    sprawdz_pole_login($bledy_formularza, $formularz, 'login');
+    sprawdz_pole_haslo($bledy_formularza, $formularz, 'haslo');
+}
+
+/**
+ * Sprawdzenie poprawności formularza logowania.
+ * 
+ * @param array $bledy_formularza Tablica przechowująca błędy danych dla formularza   
+ * @param array $formularz Tablica pól pochodzących z formularza
+ * @param array $wzorzec Tablica zawierająca informację o polach w formularzu
+ */
+function sprawdz_edycje_uzytkownikow(&$bledy_formularza, $formularz, $wzorzec) {
+    wymagaj_danych($formularz, $wzorzec, $bledy_formularza);
+	sprawdz_pole_imienazwisko($bledy_formularza, $formularz, 'imie');
+	sprawdz_pole_imienazwisko($bledy_formularza, $formularz, 'nazwisko');
     sprawdz_pole_login($bledy_formularza, $formularz, 'login');
     sprawdz_pole_haslo($bledy_formularza, $formularz, 'haslo');
 }

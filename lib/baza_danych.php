@@ -73,6 +73,45 @@ function pobierz_elementy(&$sql, $zapytanie) {
 
 }
 
+/**
+ * Obsługa dodawania, edycji i usuwania stron.
+ *
+ * @package strony.inc.php
+ * @author Tomasz Chojna
+ * @link http://www.epi.chojna.info.pl
+ * @since 1.0.1 1.03.2011
+ * @version 1.0.1 1.03.2011
+ */
+
+/**
+ * Dodanie nowej strony do bazy danych.
+ *
+ * @param array $sql Konfiguracja połączenia z bazą danych
+ * @param array $dane Tablica danych do zapisania do bazy
+ * @rerurn integer Wynik zapytania do bazy danych
+ */
+function dodaj_uzytkownika(&$sql, $dane) {
+    
+    if( !sql_polacz($sql) ) {
+        return false;
+    }   
+    else {
+
+        $dane = sql_przygotuj_dane($dane);
+
+        $zapytanie = 'INSERT INTO uzytkownicy (imie, nazwisko, typ, login, haslo) VALUES (\''.
+            $dane['imie'].'\',\''.$dane['nazwisko'].'\',\''.$dane['typ'].'\',\''.$dane['login'].'\',MD5(\''.$dane['haslo'].'\'))';
+
+        if( !sql_zapytanie($zapytanie) ) {
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+}
+
 
 /**
 * Przygotowanie danych do zapisu do bazy.

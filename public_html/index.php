@@ -31,15 +31,20 @@ switch ($_GET['wyswietl']) {
 	case '':
 		$strona['title'] = "Strona główna";
 		$layout = 'landing';
-		
+
 		if( isset($_SESSION['uzytkownik'])  && count($_SESSION['uzytkownik']) ) {
-			if($_SESSION['uzytkownik']['typ'] == "student") {
-				$menu_visibility = 'student';
-			} elseif($_SESSION['uzytkownik']['typ'] == "admin") {
-				$menu_visibility = 'admin';
+			switch ($_SESSION['uzytkownik']['typ']) {
+				case 'student':
+				case 'nauczyciel':
+				case 'admin':
+					$menu_visibility = $_SESSION['uzytkownik']['typ'];
+					break;
+				default:
+					$menu_visibility = 'public';
+					break;
 			}
 		} else {
-			$menu_visibility = 'public';			
+			$menu_visibility = 'public';
 		}
 		
 		$strona['menu'] = pobierz_elementy($sql, 'SELECT * FROM menu WHERE visibility_'.$menu_visibility.' = 1 ORDER BY id ASC');

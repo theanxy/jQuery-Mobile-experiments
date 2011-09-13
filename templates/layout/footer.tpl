@@ -1,6 +1,3 @@
-{if !empty($smarty.session.uzytkownik) && $title != 'Mapa'}
-	<a href="?wyswietl=wyloguj" data-role="button">Wyloguj</a>
-{/if}
 </div><!-- /content -->
 
 <div data-role="footer">

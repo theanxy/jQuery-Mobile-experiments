@@ -1,6 +1,14 @@
 [data-role="content"] .ui-listview {
 	margin: 15px -15px;
 }
+.wyloguj.ui-btn-left {
+	left: auto;
+	right: 10px;
+}
+ol {
+	padding: 0;
+	margin: 0;
+}
 .user-type {
 	text-align: center;
 }
