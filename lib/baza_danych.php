@@ -112,6 +112,34 @@ function dodaj_uzytkownika(&$sql, $dane) {
     }
 }
 
+/**
+ * Usuwanie użytkownika.
+ *
+ * @param array $sql Konfiguracja połączenia z bazą danych
+ * @param array $dane Tablica danych do zapisania do bazy
+ * @rerurn integer Wynik zapytania do bazy danych
+ */
+function usun_uzytkownika(&$sql, $id) {
+    
+    if( !sql_polacz($sql) ) {
+        return false;
+    }   
+    else {
+
+		$id = intval($id);
+		
+        $zapytanie = 'DELETE FROM uzytkownicy WHERE id = '.$id;
+
+        if( !sql_zapytanie($zapytanie) ) {
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+}
+
 
 /**
 * Przygotowanie danych do zapisu do bazy.

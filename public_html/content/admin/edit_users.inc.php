@@ -5,6 +5,26 @@
 		
 		$strona['uzytkownicy'] = pobierz_elementy($sql, 'SELECT * FROM uzytkownicy');
 		
+		// Usuwanie użytkownika
+		
+		if (isset($_GET['usun'])) {
+			if ($_SESSION['uzytkownik']['typ'] == 'admin') {
+				
+				$uzytkownik_usuniety = usun_uzytkownika($sql, $_GET['usun']);
+				
+				if ($uzytkownik_usuniety) {
+					$strona['komunikat'] = 'Sukces! Usunięto użytkownika.';
+					$layout = 'empty';
+				} else {
+					$strona['komunikat'] = 'Coś nie działa.';
+					$layout = 'empty';
+				}
+			} else {
+				
+			}
+		}
+		
+		// Dodawanie użytkownika
 		if($_POST) {
 			$wzorzec = array('imie', 'nazwisko', 'typ', 'login', 'haslo');
 			$strona['dane'] = pobierz_dane_z_formularza($_POST, $wzorzec);

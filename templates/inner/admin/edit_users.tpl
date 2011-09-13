@@ -21,14 +21,15 @@
 		<h3>Usuń użytkownika</h3>
 
 		{if isset($uzytkownicy)}
-		<form action="{$smarty.get.REQUEST_URI}" method="post">
+		<form action="{$smarty.server.REQUEST_URI}" method="get">
 			<fieldset>
+				<input type="hidden" name="wyswietl" value="edit_users">
+				
 				<ol>
 				{foreach from=$uzytkownicy item=uzytkownik}
-					<li><label for="uzytkownik_{$uzytkownik.id}">{$uzytkownik.login}</label> <input type="radio" name="uzytkownik" id="uzytkownik_{$uzytkownik.id}" value="{$uzytkownik.id}"></li>
+					<li><label for="usun_{$uzytkownik.id}">{$uzytkownik.login}</label> <input type="radio" name="usun" id="usun_{$uzytkownik.id}" value="{$uzytkownik.id}"></li>
 				{/foreach}
 				</ol>
-		
 				<input type="submit" value="Usuń zaznaczonych" data-theme="b">
 			</fieldset>
 		</form>
@@ -39,7 +40,7 @@
 
 	<div data-role="collapsible"{if $smarty.post.login} data-collapsed="false"{/if}>
 		<h3>Dodaj użytkownika</h3>
-		<form action="{$smarty.get.REQUEST_URI}" method="post">
+		<form action="{$smarty.server.REQUEST_URI}" method="post">
 			<fieldset>
 				<input type="text" name="imie" id="imie"{if isset($dane.imie)} value="{$dane.imie}"{/if} placeholder="Imię">
 				{if isset($komunikat.imie)}
