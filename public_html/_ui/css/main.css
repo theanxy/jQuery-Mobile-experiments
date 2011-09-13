@@ -19,6 +19,12 @@ ol {
 	padding: 0;
 	color: #999;
 }
+.users-page ol {
+	margin: 1em;
+} 
+.users-page .nauczyciel {
+	font-weight: bold;
+}
 .mapa {
 	width: 320px;
 	margin: -15px;

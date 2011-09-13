@@ -1,8 +1,21 @@
-<div data-role="collapsible-set">
+<div data-role="collapsible-set" class="users-page">
 	<div data-role="collapsible">
 		<h3>Obecni użytkownicy</h3>
 		
-		
+		{if isset($uzytkownicy)}
+		<ol>
+		{foreach from=$uzytkownicy item=uzytkownik}
+			<li{if $uzytkownik.typ == 'nauczyciel'} class="nauczyciel"{/if}>
+				{$uzytkownik.imie}
+				{$uzytkownik.nazwisko}
+				({$uzytkownik.login}) {if $uzytkownik.typ == 'nauczyciel'}*{/if}
+			</li>
+		{/foreach}
+		</ol>
+		<p>* – nauczyciel
+		{else}
+		<p>Wystąpił błąd.</p>
+		{/if}		
 	</div>
 	<div data-role="collapsible">
 		<h3>Usuń użytkownika</h3>
