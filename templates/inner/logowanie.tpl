@@ -3,18 +3,20 @@
 Formularz został wypełniony nieprawidłowo. Proszę poprawić wskazane pola.
 </div>
 {/if}
+{if $smarty.get.demo == 1}
 <aside>
 	<strong>Wersja demo (kliknij aby zalogować)</strong>
 	<ul class="users">
 {if $smarty.get.admin != 1}
-		<li id="login_student" data-user="Jan0Kowalski" data-password="Jan0Kowalski1">Student: Jan0Kowalski / Jan0Kowalski1</li>
-		<li id="login_nauczyciel" data-user="Artur0Nowak" data-password="Artur0Nowak1">Nauczyciel: Artur0Nowak / Artur0Nowak1</li>
-		<li class="link-to-admin"><a href="/?wyswietl=logowanie&amp;admin=1">Panel admina</a></li>
+		<li data-user="Jan0Kowalski" data-password="Jan0Kowalski1" data-type="student">Student: Jan0Kowalski / Jan0Kowalski1</li>
+		<li data-user="Artur0Nowak" data-password="Artur0Nowak1" data-type="nauczyciel">Nauczyciel: Artur0Nowak / Artur0Nowak1</li>
+		<li class="link-to-admin"><a href="/?wyswietl=logowanie&amp;demo=1&amp;admin=1">Panel admina</a></li>
 {else}
-		<li id="login_admin" data-user="administrator" data-password="administrator123">Admin: administrator / administrator123</li>
+		<li data-user="administrator" data-password="administrator123">Admin: administrator / administrator123</li>
 {/if}
 	</ul>
 </aside>
+{/if}
 <form method="post" action="{$smarty.server.REQUEST_URI}">
 	<div data-role="fieldcontain">
 	    <fieldset data-role="controlgroup" data-type="horizontal" class="user-type">

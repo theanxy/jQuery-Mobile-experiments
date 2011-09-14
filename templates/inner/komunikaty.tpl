@@ -1,9 +1,12 @@
 {if isset($komunikaty)}
 
 {foreach name=outer from=$komunikaty item=komunikat}
-<article>
-	<p>{$komunikat.content}</p>
-	— {$komunikat.date|date_format}
+<article class="hentry">
+	<p class="entry-title">{$komunikat.content}</p>
+	<footer class="vcard author">
+		<em class="fn">{$komunikat.author}</em>
+		<span>Dodano: <time class="updated">{$komunikat.date|date_format}</time></span>
+	</footer>
 </article>
 {/foreach}
 

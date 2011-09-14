@@ -32,6 +32,20 @@ ol {
 }
 article {
 	margin: 0 0 40px;
+	padding: 10px 0 0;
+	border-top: 1px solid #999;
+}
+article:first-child {
+	border: none;
+}
+article footer {
+	font-size: 80%;
+}
+article footer span {
+	float: right;
+}
+article footer time {
+	font-weight: bold;
 }
 table {
 	width: 100%;

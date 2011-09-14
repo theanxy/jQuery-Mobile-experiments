@@ -23,5 +23,5 @@
 {/if}
 
 {if !isset($smarty.session.uzytkownik)}
-<a href="?wyswietl=logowanie" data-rel="dialog" data-ajax="true" data-role="button">Zaloguj</a>
+<a href="?wyswietl=logowanie&amp;demo=1" data-rel="dialog" data-ajax="true" data-role="button">Zaloguj</a>
 {/if}
