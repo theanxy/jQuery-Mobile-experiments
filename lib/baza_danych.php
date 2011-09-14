@@ -140,6 +140,34 @@ function usun_uzytkownika(&$sql, $id) {
     }
 }
 
+/**
+ * Dodanie nowej strony do bazy danych.
+ *
+ * @param array $sql Konfiguracja połączenia z bazą danych
+ * @param array $dane Tablica danych do zapisania do bazy
+ * @rerurn integer Wynik zapytania do bazy danych
+ */
+function dodaj_wpis(&$sql, $dane) {
+    
+    if( !sql_polacz($sql) ) {
+        return false;
+    }   
+    else {
+
+        $dane = sql_przygotuj_dane($dane);
+
+        $zapytanie = 'INSERT INTO news (content, author, date_added) VALUES (\''.$dane['content'].'\',\''.$_SESSION['uzytkownik']['imie'].' '.$_SESSION['uzytkownik']['nazwisko'].'\',\''.date("Y-m-d H:i:s").'\')';
+		
+        if( !sql_zapytanie($zapytanie) ) {
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+}
+
 
 /**
 * Przygotowanie danych do zapisu do bazy.

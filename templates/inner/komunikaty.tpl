@@ -5,7 +5,7 @@
 	<p class="entry-title">{$komunikat.content}</p>
 	<footer class="vcard author">
 		<em class="fn">{$komunikat.author}</em>
-		<span>Dodano: <time class="updated">{$komunikat.date|date_format}</time></span>
+		<span>Dodano: <time class="updated">{$komunikat.date_added|date_format}</time></span>
 	</footer>
 </article>
 {/foreach}

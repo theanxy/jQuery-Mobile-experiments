@@ -1,3 +1,5 @@
+/* Style nadpisujące domyślny theme jQuery Mobile */
+
 [data-role="content"] .ui-listview {
 	margin: 15px -15px;
 }
@@ -50,6 +52,8 @@ article footer time {
 table {
 	width: 100%;
 }
+
+/* Pokazuje widok iPhone i ogranicza maksymalną szerokość. Tylko do wersji rozwojowej. */
 
 @media (min-width:800px) {
 	body.ui-body-c {

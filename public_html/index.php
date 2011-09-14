@@ -28,6 +28,9 @@ switch ($_GET['wyswietl']) {
     case 'komunikaty':
 		include('content/komunikaty.inc.php');
         break;
+    case 'dodaj_komunikat':
+		include('content/nauczyciel/dodaj_komunikat.inc.php');
+        break;
 	case '':
 		$strona['title'] = "Strona główna";
 		$layout = 'landing';
