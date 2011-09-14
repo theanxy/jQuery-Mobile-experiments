@@ -1,6 +1,6 @@
 <?php
 	if ( autoryzacja() ) { 
 		$strona['title'] = "Plan zajęć";
-		$layout = 'plan_aktualizuj';
+		$layout = 'nauczyciel/plan_aktualizuj';
 	}
 ?>
