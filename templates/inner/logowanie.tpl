@@ -10,7 +10,7 @@ Formularz został wypełniony nieprawidłowo. Proszę poprawić wskazane pola.
 {if $smarty.get.admin != 1}
 		<li data-user="Jan0Kowalski" data-password="Jan0Kowalski1" data-type="student">Student: Jan0Kowalski / Jan0Kowalski1</li>
 		<li data-user="Artur0Nowak" data-password="Artur0Nowak1" data-type="nauczyciel">Nauczyciel: Artur0Nowak / Artur0Nowak1</li>
-		<li class="link-to-admin"><a href="/?wyswietl=logowanie&amp;demo=1&amp;admin=1">Panel admina</a></li>
+		<li class="link-to-admin"><a href="./?wyswietl=logowanie&amp;demo=1&amp;admin=1">Panel admina</a></li>
 {else}
 		<li data-user="administrator" data-password="administrator123">Admin: administrator / administrator123</li>
 {/if}

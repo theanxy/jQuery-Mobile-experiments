@@ -19,7 +19,7 @@
 
 		<div data-role="header">
 {if $smarty.get.wyswietl != ''}
-			<a href="/" data-icon="home">Powrót</a>
+			<a href="./" data-icon="home">Powrót</a>
 {/if}
 			<h1>{$title}</h1>
 {if !empty($smarty.session.uzytkownik)}
