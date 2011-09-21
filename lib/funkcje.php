@@ -22,11 +22,14 @@ function wyswietl_strone($strona, $layout = 'landing') {
 	$smarty->assign($strona);
 	
 	$smarty->assign('layout', $layout);
-	$smarty->display(
-		$sciezki['szablony_katalog'].
-		'index'.
-		$sciezki['szablony_rozszerzenie']
+	
+	if($layout != 'no_tpl') {
+		$smarty->display(
+			$sciezki['szablony_katalog'].
+			'index'.
+			$sciezki['szablony_rozszerzenie']
 		);
+	}
 };
 
 /**

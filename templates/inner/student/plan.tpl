@@ -15,6 +15,8 @@
 {/foreach}
 	</tbody>
 </table>
+
+<a href="./?wyswietl=plan&amp;generuj=ics">Dodaj do kalendarza</a>
 {else}
 Wystąpił błąd
 {/if}
