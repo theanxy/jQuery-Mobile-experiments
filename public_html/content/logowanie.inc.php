@@ -30,7 +30,7 @@
 					$_SESSION['uzytkownik'] = $dane_uzytkownika;
 
 					// i przekierowujemy użytkownika na przykładową treść dostępną wyłącznie dla zalogowanych użytkowników:
-					header('Location: /');
+					header('Location: ./');
 					exit;
 
 				}
