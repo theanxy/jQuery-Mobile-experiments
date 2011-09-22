@@ -3,20 +3,26 @@
 {if isset($plan)}
 <form id="removeClasses" action="{$smarty.server.REQUEST_URI}" method="post">
 	<h3>Usuń zajęcia:</h3>
+	<div class="confirm">Czy na pewno usunąć zajęcia "<mark id="zajecia"></mark>"?
+		<div data-role="controlgroup">
+			<a href="index.html" data-role="button">Tak</a>
+			<a href="index.html" data-role="button">Nie</a>
+		</div>
+	</div>
+	
 	<table>
 		<thead>
 			<th>Godzina</th>
 			<th>Przedmiot</th>
-			<th>Sala</th>
-			<th>Usuń</th>
+			<th colspan="2">Sala</th>
 		</thead>
 		<tbody>
 	{foreach name=outer from=$plan item=plan_poz}
 			<tr>
 				<td>{$plan_poz.poczatek} - {$plan_poz.koniec}</td>
-				<td>{$plan_poz.przedmiot}</td>
+				<td class="przedmiot">{$plan_poz.przedmiot}</td>
 				<td>{$plan_poz.sala}</td>
-				<td class="delete"><input type="checkbox" name="delete" value="{$plan_poz.id}" data-role="none"></td>
+				<td class="delete"><a href="{$smarty.server.REQUEST_URI}&amp;usun=5" data-role="button" data-id="{$plan_poz.id}" data-icon="delete" data-iconpos="notext">Usuń</a></td>
 			</tr>
 	{/foreach}
 		</tbody>

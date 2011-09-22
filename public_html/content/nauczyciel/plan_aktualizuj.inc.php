@@ -3,7 +3,7 @@
 		$strona['title'] = "Plan zajęć";
 		$layout = 'nauczyciel/plan_aktualizuj';
 		
-		$strona['plan'] = pobierz_elementy($sql, 'SELECT poczatek, koniec, przedmiot, sala FROM plan_zajec');
+		$strona['plan'] = pobierz_elementy($sql, 'SELECT id, poczatek, koniec, przedmiot, sala FROM plan_zajec');
 		
 		if(isset($_POST['dodaj-submit'])) {
 			$wzorzec = array('start', 'koniec', 'przedmiot', 'sala');

@@ -5,20 +5,13 @@
  * @version 0.3
  */
 
-$(document).bind("mobileinit", function(){
-	
-	/**
-	 * Przejścia między stronami dzięki AJAX wyłączone, aby łatwiej ocenić warstwę PHP
-	 */
-
-	$.mobile.ajaxEnabled = false;
-});
-
 var EPI = {
 	
 	onReady : function() {
 		
-		EPI.removeClasses;
+		$form = $('#removeClasses');
+		
+		EPI.removeClasses();
 		
 		$('aside .users li')
 			.not('.link-to-admin')
@@ -51,13 +44,28 @@ var EPI = {
 		
 	},
 	
-	removeClasses : function() {
-		var $form = $('#removeClasses');
-		
-		$form.find('input').click(function() {
-			console.log('test');
+	removeClasses : function() {		
+		$form.find('.delete a').click(function() {
+			EPI.confirmRemove($(this).attr('data-id'))
+			return false;
 		});
+	},
+	
+	confirmRemove : function(e) {
+		var $przedmiot = $form.find('.delete a[data-id='+e+']').parent().siblings('.przedmiot').text();
+		
+		$form.find('#zajecia').html($przedmiot);
+		$form.find('.confirm').slideDown('slow');
 	}
 };
 
-$(document).ready(EPI.onReady);
+$(document).bind("mobileinit", function(){
+	
+	/**
+	 * Przejścia między stronami dzięki AJAX wyłączone, aby łatwiej ocenić warstwę PHP
+	 */
+
+	$.mobile.ajaxEnabled = false;
+});
+
+$('body').live('pagecreate', EPI.onReady);

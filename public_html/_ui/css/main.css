@@ -121,9 +121,34 @@ table {
 	border: 1px solid #000;
 	margin: 0 0 2em;
 }
+table th {
+	text-align: left;
+}
+table td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 13px;
+}
 .delete {
 	text-align: center;
 }
+/* Potwierdź usunięcie pozycji z planu */
+.confirm {
+	display: none;
+	font-size: 80%;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #aaa;
+	padding: 20px 10px;
+	margin: 10px 0;
+	background: #f00; /* fallback dla przeglądarek które nie rozumieją rgba */
+	background: rgba(255,255,0,0.5);
+}
+.confirm div {
+	margin: 10px auto -5px;
+}
+
 #addClasses aside {
 	font-size: 80%;
 	font-style: italic;
