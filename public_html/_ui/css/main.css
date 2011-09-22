@@ -16,18 +16,20 @@
 .container .menu li a {
 	float: left;
 	display: inline-block;
-	color: #fff;
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
 	text-decoration: none;
-	background: #000;
 	width: 100%;
 	height: 90px;
 	box-sizing: border-box;
-	padding: 20px 10px 0 10px;
+	padding: 20px 8px 0 8px;
 	text-align: left;
-	
 	outline: none;
 	font: 14px/100% Arial, Helvetica, sans-serif;
-	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	text-shadow: 1px 2px 2px rgba(0,0,0,.5);
 	-webkit-border-radius: .5em; 
 	-moz-border-radius: .5em;
 	border-radius: .5em;
@@ -36,16 +38,30 @@
 	box-shadow: 0 2px 3px rgba(0,0,0,.4);
 }
 .container .menu li a:hover {
-	background: #666;
+	background: #f47c20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+	background: -moz-linear-gradient(top,  #f88e11,  #f06015);
 }
 .container .menu li a:active {
 	position: relative;
 	top: 2px;
 }
 .container .menu .highlight a {
-	background: orange;
+	border-color: #B57121;
+	background: #784F0D;
+	background: -webkit-gradient(linear, left top, left bottom, from(#784F0D), to(#573703));
+	background: -moz-linear-gradient(top,  #784F0D,  #573703);
+}
+.container .menu .highlight a:hover {
+	background: #6E490C;
+	background: -webkit-gradient(linear, left top, left bottom, from(#6E490C), to(#332104));
+	background: -moz-linear-gradient(top,  #6E490C,  #332104);
 }
 
+h2, h3 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	margin-top: 0;
+}
 [data-role="content"] .ui-listview {
 	margin: 15px -15px;
 }

@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 	<link rel="stylesheet" href="_ui/css/jquery.mobile-1.0b3.css" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="_ui/css/main.css" />
 	<script type="text/javascript" src="_ui/js/jquery-1.6.3.min.js"></script>
 	<script type="text/javascript" src="_ui/js/main.js"></script>

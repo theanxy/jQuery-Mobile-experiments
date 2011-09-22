@@ -3,7 +3,7 @@
 {/if}
 
 {if !isset($smarty.session.uzytkownik)}
-<h2>Witaj w systemie zarządzania studentów!</h2>
+<h2>Witaj w Uczelnianym Systemie Obsługi Studiów!</h2>
 
 <p>To jest prototyp Systemu Obsługi Studenta dostosowanego pod urządzenia mobilne.</p>
 {/if}
