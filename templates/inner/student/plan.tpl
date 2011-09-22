@@ -16,7 +16,7 @@
 	</tbody>
 </table>
 
-<a href="./?wyswietl=plan&amp;generuj=ics">Dodaj do kalendarza</a>
+<a href="./?wyswietl=plan&amp;generuj=ics" data-role="button">Pobierz kalendarz</a>
 {else}
 Wystąpił błąd
 {/if}
