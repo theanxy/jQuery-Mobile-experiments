@@ -87,4 +87,35 @@ function blad_formularza(&$bledy_formularza, $pole, $opis_bledu='Nieprawidłowa 
     $bledy_formularza = $bledy_formularza + array($pole => $opis_bledu);
 };
 
+/**
+* Generuje kalendarz w postacie pliku iCalendar.
+*
+* @param array $formularz Tablica zawierająca pola formularza
+* @param array $wzorzec Tablica zawierająca informacje jakie pola w formularzu są wymagane
+* @param array $bledy_formularza Tablica przechowująca błędy danych dla formularza
+*/
+function generuj_kalendarz($dane) {
+
+$ical['begin'] = "BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN\n";
+
+	$ical['content'] = '';
+
+	foreach ($dane as $zajecia) {
+$ical['content'] .= "BEGIN:VEVENT
+UID:" . md5(uniqid(mt_rand(), true)) . "@uj.edu.pl
+DTSTAMP:" . gmdate('Ymd').'T'. gmdate('His') . "Z
+DTSTART:" . gmdate('Ymd').'T'. gmdate('His') . "Z
+DTEND:" . gmdate('Ymd').'T'. gmdate('His') . "Z
+SUMMARY:".$zajecia['przedmiot']."
+DESCRIPTION:Sala ".$zajecia['sala']."
+END:VEVENT\n";
+	}
+
+	$ical['end']= "END:VCALENDAR";
+
+	return $ical['begin'].$ical['content'].$ical['end'];
+};
+
 ?>
