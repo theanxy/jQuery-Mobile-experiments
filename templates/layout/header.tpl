@@ -19,7 +19,8 @@
 
 		<div data-role="header">
 {if $smarty.get.wyswietl != ''}
-			<a href="./" data-icon="home">Powrót</a>
+			<a href="./" data-icon="arrow-l">Główna</a>
+			<!-- http://mrgan.tumblr.com/post/10492926111/labeling-the-back-button -->
 {/if}
 			<h1>{$title}</h1>
 {if !empty($smarty.session.uzytkownik)}
