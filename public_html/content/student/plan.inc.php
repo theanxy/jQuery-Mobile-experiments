@@ -9,7 +9,7 @@
 			
 		} elseif (count($strona['plan']) < 1) {
 			
-			$strona['komunikat'] = 'Brak zajęć do zapisania w kalendarzu.'
+			$strona['komunikat'] = 'Brak zajęć do zapisania w kalendarzu.';
 			$layout = "empty";
 			
 		} else {
