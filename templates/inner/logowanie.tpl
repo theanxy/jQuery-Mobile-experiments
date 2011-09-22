@@ -1,8 +1,14 @@
 {if isset($komunikat)}
-<div>
+<div class="error">
 Formularz został wypełniony nieprawidłowo. Proszę poprawić wskazane pola.
 </div>
 {/if}
+{if $smarty.get.blad == zaloguj}
+<div class="error">
+Musisz być zalogowany, aby dostać się do tej podstrony.
+</div>
+{/if}
+
 {if $smarty.get.demo == 1}
 <aside>
 	<strong>Wersja demo (kliknij aby zalogować)</strong>

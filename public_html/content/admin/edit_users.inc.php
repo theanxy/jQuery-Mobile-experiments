@@ -19,8 +19,6 @@
 					$strona['komunikat'] = 'Coś nie działa.';
 					$layout = 'empty';
 				}
-			} else {
-				
 			}
 		}
 		

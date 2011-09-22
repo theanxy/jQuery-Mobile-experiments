@@ -18,11 +18,12 @@ var EPI = {
 	
 	onReady : function() {
 		
-		/**
-		 * Dane logowania w demo przekazywane przez PHP, aby uniknąć przechowywania danych w publicznym skrypcie
-		 */
+		EPI.removeClasses;
 		
-		$('aside .users li').not('.link-to-admin').css('cursor', 'pointer').click(EPI.setupDemo);
+		$('aside .users li')
+			.not('.link-to-admin')
+			.css('cursor', 'pointer')
+			.click(EPI.setupDemo);
 	},
 	
 	setupDemo : function(e) {
@@ -48,7 +49,15 @@ var EPI = {
 			$('label[for='+typ+']').addClass('ui-btn-active');
 		}
 		
-	}	
+	},
+	
+	removeClasses : function() {
+		var $form = $('#removeClasses');
+		
+		$form.find('input').click(function() {
+			console.log('test');
+		});
+	}
 };
 
 $(document).ready(EPI.onReady);

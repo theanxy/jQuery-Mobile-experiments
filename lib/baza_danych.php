@@ -113,6 +113,35 @@ function dodaj_uzytkownika(&$sql, $dane) {
 }
 
 /**
+ * Dodanie nowych zajęć do bazy.
+ *
+ * @param array $sql Konfiguracja połączenia z bazą danych
+ * @param array $dane Tablica danych do zapisania do bazy
+ * @rerurn integer Wynik zapytania do bazy danych
+ */
+function dodaj_zajecia(&$sql, $dane) {
+    
+    if( !sql_polacz($sql) ) {
+        return false;
+    }   
+    else {
+
+        $dane = sql_przygotuj_dane($dane);
+
+        $zapytanie = 'INSERT INTO plan_zajec (poczatek, koniec, przedmiot, sala) VALUES (\''.
+            $dane['start'].'\',\''.$dane['koniec'].'\',\''.$dane['przedmiot'].'\',\''.$dane['sala'].'\')';
+
+        if( !sql_zapytanie($zapytanie) ) {
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+}
+
+/**
  * Usuwanie użytkownika.
  *
  * @param array $sql Konfiguracja połączenia z bazą danych

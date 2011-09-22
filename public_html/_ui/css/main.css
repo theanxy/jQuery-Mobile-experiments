@@ -62,8 +62,13 @@ h2, h3 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	margin-top: 0;
 }
+
 [data-role="content"] .ui-listview {
 	margin: 15px -15px;
+}
+
+.error {
+	color: #c00;
 }
 .wyloguj.ui-btn-left {
 	left: auto;
@@ -113,6 +118,19 @@ article footer time {
 }
 table {
 	width: 100%;
+	border: 1px solid #000;
+	margin: 0 0 2em;
+}
+.delete {
+	text-align: center;
+}
+#addClasses aside {
+	font-size: 80%;
+	font-style: italic;
+	margin: -5px 0 5px;
+}
+#addClasses aside:before {
+	content: "# ";
 }
 
 .clearfix:after {

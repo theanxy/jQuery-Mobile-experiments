@@ -42,7 +42,7 @@
         else {
             // przekierowujemy użytkownika na stronę logowania:
             if (!isset($noredirect) || $noredirect != true) {
-				header('Location: logowanie.php');
+				header('Location: ./?wyswietl=logowanie&blad=zaloguj');
 	            exit;
 			};
         }
