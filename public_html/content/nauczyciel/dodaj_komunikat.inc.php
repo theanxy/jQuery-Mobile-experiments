@@ -1,5 +1,5 @@
 <?php
-	if ( autoryzacja() ) { 
+	if ( autoryzacja() && in_array($_SESSION['uzytkownik']['typ'], array('nauczyciel', 'admin'))) { 
 		$strona['title'] = "Dodaj komunikat";
 		$layout = 'nauczyciel/dodaj_komunikat';
 		
@@ -18,5 +18,8 @@
 				$layout = 'empty';
 			}
 		}
+	} else {
+		$layout = "empty";
+		$strona['komunikat'] = 'Nie masz dostępu do tej strony.<br>Nie próbuj nawet się włamać.';
 	}
 ?>

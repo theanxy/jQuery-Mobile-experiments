@@ -1,5 +1,5 @@
 <?php
-	if ( autoryzacja() ) { 
+	if ( autoryzacja() && $_SESSION['uzytkownik']['typ'] == 'admin') { 
 		$strona['title'] = "Edytuj użytkowników";
 		$layout = 'admin/edit_users';
 		
@@ -47,5 +47,8 @@
 				}
 			}
 		}
+	} else {
+		$layout = "empty";
+		$strona['komunikat'] = 'Nie masz dostępu do tej strony.<br>Nie próbuj nawet się włamać.';
 	}
 ?>

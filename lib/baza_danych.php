@@ -170,6 +170,34 @@ function usun_uzytkownika(&$sql, $id) {
 }
 
 /**
+ * Usuwanie zajęć.
+ *
+ * @param array $sql Konfiguracja połączenia z bazą danych
+ * @param array $dane Tablica danych do zapisania do bazy
+ * @rerurn integer Wynik zapytania do bazy danych
+ */
+function usun_zajecia(&$sql, $id) {
+    
+    if( !sql_polacz($sql) ) {
+        return false;
+    }   
+    else {
+
+		$id = intval($id);
+		
+        $zapytanie = 'DELETE FROM plan_zajec WHERE id = '.$id;
+
+        if( !sql_zapytanie($zapytanie) ) {
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
+}
+
+/**
  * Dodanie nowej strony do bazy danych.
  *
  * @param array $sql Konfiguracja połączenia z bazą danych

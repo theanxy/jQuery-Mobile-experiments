@@ -37,7 +37,7 @@
 
 		<div data-role="footer">
 			{if !empty($smarty.session.uzytkownik)}
-				<h4>{$smarty.session.uzytkownik.typ|capitalize}</h4>
+				<h4>{$smarty.session.uzytkownik.imie} {$smarty.session.uzytkownik.nazwisko} ({$smarty.session.uzytkownik.typ|capitalize})</h4>
 			{else}
 				<h4>Niezalogowany!</h4>
 			{/if}

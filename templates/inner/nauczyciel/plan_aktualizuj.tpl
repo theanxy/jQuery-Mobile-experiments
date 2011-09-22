@@ -5,8 +5,8 @@
 	<h3>Usuń zajęcia:</h3>
 	<div class="confirm">Czy na pewno usunąć zajęcia "<mark id="zajecia"></mark>"?
 		<div data-role="controlgroup">
-			<a href="index.html" data-role="button">Tak</a>
-			<a href="index.html" data-role="button">Nie</a>
+			<a href="{$smarty.server.REQUEST_URI}" data-role="button" id="delete-yes">Tak</a>
+			<a href="{$smarty.server.REQUEST_URI}" data-role="button" id="delete-no">Nie</a>
 		</div>
 	</div>
 	

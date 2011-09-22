@@ -158,6 +158,11 @@ table td {
 	content: "# ";
 }
 
+.ui-footer .ui-title {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 .clearfix:after {
 	content: ".";
 	display: block;

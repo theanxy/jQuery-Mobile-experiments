@@ -55,7 +55,15 @@ var EPI = {
 		var $przedmiot = $form.find('.delete a[data-id='+e+']').parent().siblings('.przedmiot').text();
 		
 		$form.find('#zajecia').html($przedmiot);
-		$form.find('.confirm').slideDown('slow');
+		$('#delete-yes').attr('href', '?wyswietl=aktualizuj&usun='+e);
+		
+		$form.find('.confirm').attr('data-id', e).slideDown('slow');
+
+		$('#delete-no').click(function() {
+			$('.confirm').slideUp('slow');
+			
+			return false;
+		});
 	}
 };
 
