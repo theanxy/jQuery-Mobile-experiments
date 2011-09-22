@@ -13,10 +13,10 @@
 {/if}
 
 {if isset($menu)}
-<ul data-role="listview">
+<ul class="menu clearfix">
 {foreach from=$menu key=id item=menu_poz}
 {strip}
-	<li{if $menu_poz.visibility_public == '0' && $menu_poz.visibility_student == '0'} data-theme="e"{/if}><a href="./?wyswietl={$menu_poz.adres}">{$menu_poz.nazwa}</a></li>
+	<li{if $menu_poz.visibility_public == '0' && $menu_poz.visibility_student == '0'} class="highlight"{/if}><a href="./?wyswietl={$menu_poz.adres}">{$menu_poz.nazwa}</a></li>
 {/strip}
 {/foreach}
 </ul>

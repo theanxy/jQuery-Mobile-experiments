@@ -1,4 +1,42 @@
-/* Style nadpisujące domyślny theme jQuery Mobile */
+/*
+ * Style nadpisujące domyślny theme jQuery Mobile
+*/
+
+/* Menu na stronie głównej */
+.menu {
+	padding: 0;
+}
+.menu li {
+	float: left;
+	width: 31%;
+	margin: 0 1% 10px 0;
+	padding: 0;
+	list-style: none;
+}
+.container .menu li a {
+	float: left;
+	display: inline-block;
+	vertical-align: middle;
+	color: #fff;
+	text-shadow: none;
+	text-decoration: none;
+	background: #000;
+	width: 100%;
+	height: 90px;
+	box-sizing: border-box;
+	font-size: 75%;
+	padding: 30px 10px 0 10px;
+	text-align: center;
+	-webkit-border-radius: 90px;
+	-moz-border-radius: 90px;
+	border-radius: 90px;
+}
+.container .menu li a:hover {
+	background: #666;
+}
+.container .menu .highlight a {
+	background: orange;
+}
 
 [data-role="content"] .ui-listview {
 	margin: 15px -15px;
@@ -51,6 +89,14 @@ article footer time {
 }
 table {
 	width: 100%;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
 }
 
 /* Pokazuje widok iPhone i ogranicza maksymalną szerokość. Tylko do wersji rozwojowej. */
