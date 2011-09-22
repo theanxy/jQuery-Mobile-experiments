@@ -52,6 +52,8 @@ switch ($_GET['wyswietl']) {
 		
 		$strona['menu'] = pobierz_elementy($sql, 'SELECT * FROM menu WHERE visibility_'.$menu_visibility.' = 1 ORDER BY id ASC');
 		
+		$strona['uzytkownikow'] = pobierz_elementy($sql, 'SELECT COUNT(*) AS ilosc FROM uzytkownicy');
+		
 		break;
     case 'edit_users':
 		include('content/admin/edit_users.inc.php');
@@ -70,13 +72,5 @@ switch ($_GET['wyswietl']) {
 }
 
 wyswietl_strone($strona, $layout);
-
-// if ( autoryzacja() ) { 
-// 	$strona['wyniki'] = pobierz_elementy($sql, 'SELECT * FROM ksiazka_telefoniczna');
-// 	
-// 	wyswietl_strone($strona);
-// } else {
-// 	wyswietl_strone($strona);
-// };
 
 ?>

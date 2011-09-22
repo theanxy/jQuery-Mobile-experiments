@@ -9,30 +9,38 @@
 .menu li {
 	float: left;
 	width: 31%;
-	margin: 0 1% 10px 0;
+	margin: 0 2% 10px 0;
 	padding: 0;
 	list-style: none;
 }
 .container .menu li a {
 	float: left;
 	display: inline-block;
-	vertical-align: middle;
 	color: #fff;
-	text-shadow: none;
 	text-decoration: none;
 	background: #000;
 	width: 100%;
 	height: 90px;
 	box-sizing: border-box;
-	font-size: 75%;
-	padding: 30px 10px 0 10px;
-	text-align: center;
-	-webkit-border-radius: 90px;
-	-moz-border-radius: 90px;
-	border-radius: 90px;
+	padding: 20px 10px 0 10px;
+	text-align: left;
+	
+	outline: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 2px 2px rgba(0,0,0,.6);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 2px 3px rgba(0,0,0,.4);
 }
 .container .menu li a:hover {
 	background: #666;
+}
+.container .menu li a:active {
+	position: relative;
+	top: 2px;
 }
 .container .menu .highlight a {
 	background: orange;

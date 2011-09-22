@@ -25,3 +25,8 @@
 {if !isset($smarty.session.uzytkownik)}
 <a href="?wyswietl=logowanie&amp;demo=1" data-rel="dialog" data-ajax="true" data-role="button">Zaloguj</a>
 {/if}
+
+{if $smarty.session.uzytkownik.typ == "admin"}
+<h4>Statystyki systemu</h4>
+Użytkowników: {$uzytkownikow.0.ilosc}
+{/if}
