@@ -1,4 +1,11 @@
 <?php
+/**
+ * Podstrona aktualizacji planu zajęć.
+ *
+ * @package plan_aktualizuj.inc.php
+ * @author Wojtek Zając
+ * @version 1.2 23.09.2011
+ */
 	if ( autoryzacja() && $_SESSION['uzytkownik']['typ'] == 'nauczyciel') { 
 		$strona['title'] = "Plan zajęć";
 		$layout = 'nauczyciel/plan_aktualizuj';

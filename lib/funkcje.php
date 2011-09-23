@@ -1,8 +1,11 @@
 <?php
-/*
-Funkcje wykorzystywane w aplikacji.
-*/
-
+/**
+ * Funkcje wykorzystywane w aplikacji.
+ *
+ * @package funkcje.php
+ * @author Wojtek Zając
+ * @version 1.2 23.09.2011
+ */
 
 /**
 * Wyświetlenie szablonu.
@@ -59,7 +62,7 @@ function pobierz_dane_z_formularza(&$formularz, $wzorzec) {
 };
 
 /**
-* Funkcja sprawdza czy zostały wypełnione wymagane pola formularza/
+* Funkcja sprawdza czy zostały wypełnione wymagane pola formularza.
 *
 * @param array $formularz Tablica zawierająca pola formularza
 * @param array $wzorzec Tablica zawierająca informacje jakie pola w formularzu są wymagane
@@ -77,7 +80,7 @@ function wymagaj_danych($formularz, $wzorzec, &$bledy_formularza) {
 };
 
 /**
- * Wstawienie do tablicy bledów formularza informacji o błędnie wypełnionym polu wraz z opisem.
+ * Wstawienie do tablicy błedów formularza informacji o błędnie wypełnionym polu wraz z opisem.
  *
  * @param array $bledy_formularza Tablica zawierająca ewentualne błędy formularza
  * @param string $pole Nazwa błędnie wypełnionego pola
@@ -88,11 +91,10 @@ function blad_formularza(&$bledy_formularza, $pole, $opis_bledu='Nieprawidłowa 
 };
 
 /**
-* Generuje kalendarz w postacie pliku iCalendar.
+* Generuje kalendarz w postaci pliku iCalendar.
 *
-* @param array $formularz Tablica zawierająca pola formularza
-* @param array $wzorzec Tablica zawierająca informacje jakie pola w formularzu są wymagane
-* @param array $bledy_formularza Tablica przechowująca błędy danych dla formularza
+* @param array $dane Tablica zawierająca listę zajęć
+* @return string Dane do zapisania w formacie pliku .ics
 */
 function generuj_kalendarz($dane) {
 

@@ -1,4 +1,11 @@
 <?php
+/**
+ * Podstrona logowania.
+ *
+ * @package logowanie.inc.php
+ * @author Wojtek Zając
+ * @version 1.2 23.09.2011
+ */
 	if ( isset($_SESSION['uzytkownik']) ) {
 		$strona['komunikat'] = "Użytkownik już zalogowany. Najpierw się wyloguj.";
 

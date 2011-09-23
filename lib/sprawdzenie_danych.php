@@ -1,4 +1,11 @@
 <?php
+/**
+ * Sprawdzenie danych w systemie.
+ *
+ * @package sprawdzenie_danych.php
+ * @author Wojtek Zając
+ * @version 1.2 23.09.2011
+ */
 
 /**
  * Sprawdzenie poprawności identyfikatora użytkownika.
@@ -65,7 +72,7 @@ function sprawdz_pole_haslo(&$bledy_formularza, $formularz, $pole) {
 }
 
 /**
- * Sprawdzenie poprawności identyfikatora użytkownika.
+ * Sprawdzenie poprawności imienia lub nazwiska.
  * 
  * @param array $bledy_formularza Tablica przechowująca błędy danych dla formularza   
  * @param array $formularz Tablica pól pochodzących z formularza
@@ -116,7 +123,7 @@ function sprawdz_pole_godzina(&$bledy_formularza, $formularz, $pole) {
 }
 
 /**
- * Sprawdzenie poprawności przedmiotu.
+ * Sprawdzenie poprawności podanego przedmiotu.
  * 
  * @param array $bledy_formularza Tablica przechowująca błędy danych dla formularza   
  * @param array $formularz Tablica pól pochodzących z formularza

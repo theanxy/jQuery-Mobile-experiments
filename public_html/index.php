@@ -1,7 +1,11 @@
 <?php
-/*
-  Punkt wejściowy aplikacji. Definiuje o zawieranej podstronie.
-*/
+/**
+ * Punkt wejściowy aplikacji. Steruje wyświetlanymi podstronami.
+ *
+ * @package index.inc.php
+ * @author Wojtek Zając
+ * @version 1.2 23.09.2011
+ */
 
 session_start();
 session_regenerate_id();

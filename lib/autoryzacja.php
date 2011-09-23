@@ -2,11 +2,9 @@
     /**
      * Autoryzacja użytkownika w systemie.
      *
-     * @package autoryzacja.inc.php
-     * @author Tomasz Chojna
-     * @link http://www.epi.chojna.info.pl
-     * @since 1.0.1 1.03.2011
-     * @version 1.0.1 1.03.2011
+     * @package autoryzacja.php
+     * @author Wojtek Zając
+     * @version 1.2 23.09.2011
      */
 
     /**
@@ -49,7 +47,4 @@
         
      }
 
-	function sprawdz_autoryzacje($strona, $tytul) {
-		
-	}
 ?>

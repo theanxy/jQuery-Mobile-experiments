@@ -1,4 +1,11 @@
 <?php
+/**
+ * Podstrona pokazująca plan zajęć.
+ *
+ * @package plan.inc.php
+ * @author Wojtek Zając
+ * @version 1.2 23.09.2011
+ */
 	if ( autoryzacja() ) { 
 		$strona['plan'] = pobierz_elementy($sql, 'SELECT poczatek, koniec, przedmiot, sala FROM plan_zajec');
 		

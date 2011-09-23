@@ -1,3 +1,10 @@
+{* 
+	Logowanie użytkowników.
+    
+    @package logowanie.tpl
+    @author Wojciech Zając
+    @version 1.2 23.09.2011
+*}
 {if isset($komunikat)}
 <div class="error">
 Formularz został wypełniony nieprawidłowo. Proszę poprawić wskazane pola.

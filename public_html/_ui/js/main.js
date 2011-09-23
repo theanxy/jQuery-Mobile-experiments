@@ -1,8 +1,9 @@
 /**
  * Skrypty wspomagające poruszanie się po stronie.
  *
+ * @package main.js
  * @author Wojtek Zając
- * @version 0.3
+ * @version 1.2 23.09.2011
  */
 
 var EPI = {
@@ -19,6 +20,7 @@ var EPI = {
 			.click(EPI.setupDemo);
 	},
 	
+	// Funkcja pozwalająca na łatwe "przeklikanie się" przez aplikację (demo)
 	setupDemo : function(e) {
 		var $this = $(this); // lepsza wydajnosc dzieki catche na $(this)
 
@@ -44,13 +46,16 @@ var EPI = {
 		
 	},
 	
+	// Wywoływanie usuwania zajęć
 	removeClasses : function() {		
 		$form.find('.delete a').click(function() {
+			// Wywołujemy funkcję pokazującą potwierdzenie usuwania zajęć
 			EPI.confirmRemove($(this).attr('data-id'))
 			return false;
 		});
 	},
 	
+	// Potwierdzenie usuwania zajęć
 	confirmRemove : function(e) {
 		var $przedmiot = $form.find('.delete a[data-id='+e+']').parent().siblings('.przedmiot').text();
 		
@@ -69,10 +74,7 @@ var EPI = {
 
 $(document).bind("mobileinit", function(){
 	
-	/**
-	 * Przejścia między stronami dzięki AJAX wyłączone, aby łatwiej ocenić warstwę PHP
-	 */
-
+	//Świadome pozbycie się efektów bazujących na AJAX celem łatwiejszej oceny warstwy PHP.
 	$.mobile.ajaxEnabled = false;
 });
 

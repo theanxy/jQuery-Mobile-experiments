@@ -1,3 +1,10 @@
+{* 
+    Aktualizacja zajęć.
+    
+    @package plan_aktualizuj.tpl
+    @author Wojciech Zając
+    @version 1.2 23.09.2011
+*}
 <h2>Edytor zajęć</h2>
 
 {if isset($plan)}

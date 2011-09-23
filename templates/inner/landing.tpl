@@ -1,3 +1,10 @@
+{* 
+	Główna strona aplikacji.
+    
+    @package landing.tpl
+    @author Wojciech Zając
+    @version 1.2 23.09.2011
+*}
 {if isset($komunikat)}
 <h2>{$komunikat}</h2>
 {/if}

@@ -1,4 +1,11 @@
 <?php
+/**
+ * Podstrona do wylogowania użytkownika.
+ *
+ * @package wyloguj.inc.php
+ * @author Wojtek Zając
+ * @version 1.2 23.09.2011
+ */
 	if ( autoryzacja() ) { 
 
 	    $layout = 'empty';

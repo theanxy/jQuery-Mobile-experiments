@@ -1,3 +1,10 @@
+{* 
+	Lista komunikatów do wyświetlenia.
+    
+    @package komunikaty.tpl
+    @author Wojciech Zając
+    @version 1.2 23.09.2011
+*}
 {if isset($komunikaty)}
 
 {foreach name=outer from=$komunikaty item=komunikat}

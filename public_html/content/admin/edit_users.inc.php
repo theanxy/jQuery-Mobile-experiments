@@ -1,4 +1,12 @@
 <?php
+/**
+ * Podstrona edycji użytkowników.
+ *
+ * @package edit_users.inc.php
+ * @author Wojtek Zając
+ * @version 1.2 23.09.2011
+ */
+
 	if ( autoryzacja() && $_SESSION['uzytkownik']['typ'] == 'admin') { 
 		$strona['title'] = "Edytuj użytkowników";
 		$layout = 'admin/edit_users';

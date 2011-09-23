@@ -1,7 +1,11 @@
 <?php
-/*
- Główny kontroler aplikacji.
-*/
+/**
+ * Główny kontroler aplikacji.
+ *
+ * @package cms.h.php
+ * @author Wojtek Zając
+ * @version 1.2 23.09.2011
+ */
 
 // zawieranie Smarty
 include 'Smarty/Smarty.class.php';

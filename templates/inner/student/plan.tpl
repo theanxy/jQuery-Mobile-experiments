@@ -1,3 +1,10 @@
+{* 
+    Plan zajęć.
+    
+    @package plan.tpl
+    @author Wojciech Zając
+    @version 1.2 23.09.2011
+*}
 {if isset($plan)}
 <table style="border: 1px solid #000;">
 	<thead>

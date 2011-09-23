@@ -1,3 +1,10 @@
+{* 
+	Edycja użytkowników.
+    
+    @package edit_users.tpl
+    @author Wojciech Zając
+    @version 1.2 23.09.2011
+*}
 <div data-role="collapsible-set" class="users-page">
 	<div data-role="collapsible">
 		<h3>Obecni użytkownicy</h3>

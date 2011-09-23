@@ -1,4 +1,11 @@
 <?php
+/**
+ * Podstrona dodawania komunikatów.
+ *
+ * @package dodaj_komunikat.inc.php
+ * @author Wojtek Zając
+ * @version 1.2 23.09.2011
+ */
 	if ( autoryzacja() && in_array($_SESSION['uzytkownik']['typ'], array('nauczyciel', 'admin'))) { 
 		$strona['title'] = "Dodaj komunikat";
 		$layout = 'nauczyciel/dodaj_komunikat';
